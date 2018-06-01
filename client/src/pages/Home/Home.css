@@ -1,0 +1,19 @@
+.jumbotron {
+    background-image:  url('../../images/draft.jpeg');
+    height: 600px;
+    background-size: cover;
+    border-radius: 0;
+    background-blend-mode: darken;
+}
+
+h1{
+    font-family: 'Pacifico', cursive;
+    color: #8c0004;
+    margin-top: 150px;
+    text-shadow: 2px 2px black;
+}
+
+.summaries {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}

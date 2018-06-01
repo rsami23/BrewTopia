@@ -2,7 +2,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const routes = require("./routes");
+// const routes = require("./routes");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -17,7 +17,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Add routes
-app.use(routes);
+// app.use(routes);
 
 // Set up promises with mongoose
 mongoose.Promise = global.Promise;
@@ -25,9 +25,6 @@ mongoose.Promise = global.Promise;
 // Connect to Mongo DB
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/brewtopia",
-  {
-    useMongoClient: true
-  }
 );
 
 // Send every request to the React app
