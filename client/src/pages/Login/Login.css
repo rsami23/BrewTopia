@@ -1,0 +1,17 @@
+.login-title {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.login-form {
+    border: 1px solid #777777;
+    border-radius: 10px;
+    padding: 50px;
+    margin-top: 30px;
+}
+
+.wheat-image {
+    width: 100%;
+    position:fixed;
+    bottom:0px;
+}

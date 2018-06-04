@@ -6,7 +6,7 @@ class Home extends Component {
         return(
             <div className="fluid page">
                 <div className="jumbotron">
-                    <h1 className="display-2 text-center">BrewTopia</h1>
+                    <h1 className="display-1 text-center">BrewTopia</h1>
                 </div>
                 <div className="container">
                     <div className="row summaries">

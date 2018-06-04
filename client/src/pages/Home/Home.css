@@ -1,10 +1,18 @@
 .jumbotron {
-    background-image:  url('../../images/draft.jpeg');
+    background-image:  url('../../images/draft.jpeg'); 
     height: 600px;
     background-size: cover;
     border-radius: 0;
     background-blend-mode: darken;
 }
+
+/* .myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+} */
 
 h1{
     font-family: 'Pacifico', cursive;
