@@ -22,7 +22,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Add routes
-app.use(routes);
+app.use("/api", routes);
 
 // Set up promises with mongoose
 mongoose.Promise = global.Promise;
@@ -34,9 +34,9 @@ mongoose.connect(
 
 // Send every request to the React app
 // Define any API routes before this runs
-app.get("*", function(req, res) {
+// app.get("*", function(req, res) {
   // res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
+// });
 
 app.listen(PORT, function() {
   console.log(`🌎 ==> Server now on port ${PORT}!`);

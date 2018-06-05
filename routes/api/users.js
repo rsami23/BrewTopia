@@ -1,8 +1,6 @@
 const router = require("express").Router();
-const beersController = require("../../controllers/usersController");
+const usersController = require("../../controllers/usersController");
 
-router
-  .route("/signup")
-  .post(usersController.create);
+router.post("/signup", usersController.create);
 
-  module.exports = router;
+module.exports = router;
