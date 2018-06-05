@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import About from "./pages/About";
+import Dashboard from "./pages/Dashboard";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 
@@ -16,6 +17,7 @@ const App = () => (
         <Route exact path="/signup" component={ Signup } />
         <Route exact path="/login" component={ Login } />
         <Route exact path="/about" component={ About } />
+        <Route exact path="/dashboard" component={ Dashboard } />
       </Switch>
       <Footer />
     </div>

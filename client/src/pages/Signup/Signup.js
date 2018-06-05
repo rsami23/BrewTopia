@@ -13,26 +13,26 @@ class Signup extends Component {
                     <div className="form-group">
                         <div className="row">
                             <div className="form-group col-md-6">
-                                <label htmlFor="formGroupExampleInput">First Name</label>
-                                <input type="text" className="form-control" id="formGroupExampleInput" placeholder=""/>
+                                <label htmlFor="firstName">First Name</label>
+                                <input type="text" className="form-control" id="firstName" placeholder=""/>
                             </div>
                             <div className="form-group col-md-6">
-                                <label htmlFor="formGroupExampleInput2">Last Name</label>
-                                <input type="text" className="form-control" id="formGroupExampleInput2" placeholder=""/>
+                                <label htmlFor="lastName">Last Name</label>
+                                <input type="text" className="form-control" id="lastName" placeholder=""/>
                             </div>
                         </div>
                     </div> 
                     <div className="form-group">
-                        <label htmlFor="formGroupExampleInput">User ID</label>
-                        <input type="text" className="form-control" id="formGroupExampleInput" placeholder=""/>
+                        <label htmlFor="userId">User ID</label>
+                        <input type="text" className="form-control" id="userId" placeholder=""/>
                     </div>
                     <div className="form-group">
-                        <label htmlFor="formGroupExampleInput">Password</label>
-                        <input type="text" className="form-control" id="formGroupExampleInput" placeholder=""/>
+                        <label htmlFor="password">Password</label>
+                        <input type="text" className="form-control" id="password" placeholder=""/>
                     </div>
                     <div className="form-group">
-                        <label className="my-1 mr-2" htmlFor="inlineFormCustomSelectPref">Are you 21 years or older?</label>
-                        <select className="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                        <label className="my-1 mr-2" htmlFor="ageValidate">Are you 21 years or older?</label>
+                        <select className="custom-select my-1 mr-sm-2" id="ageValidate">
                             <option defaultValue>Choose...</option>
                             <option value="1">Yes</option>
                             <option value="2">No</option>

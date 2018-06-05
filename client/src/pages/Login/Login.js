@@ -4,7 +4,7 @@ import wheatImage from "../../images/wheat.png";
 
 const Login = () => (
     <div>
-        <h1 className="display-3 login-title">Welcome Back to BeerTopia!</h1>
+        <h1 className="display-3 login-title">Welcome Back to BrewTopia!</h1>
         <div className="container login-form">
             <div className="row">
                 <div className="col-sm-12">
