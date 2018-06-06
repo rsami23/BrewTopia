@@ -4,9 +4,7 @@ const bodyParser = require("body-parser");
 const morgan = require("morgan");
 const http = require("http");
 const mongoose = require("mongoose");
-const routes = require("./routes");
 const path = require("path");
-const PORT = process.env.PORT || 3001;
 const app = express();
 
 // Configure body parser for AJAX requests
@@ -22,7 +20,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Add routes
-app.use("/api", routes);
+const routes = require("./routes/users.js")(app);
 
 // Set up promises with mongoose
 mongoose.Promise = global.Promise;
@@ -37,6 +35,8 @@ mongoose.connect(
 // app.get("*", function(req, res) {
   // res.sendFile(path.join(__dirname, "./client/build/index.html"));
 // });
+
+const PORT = process.env.PORT || 3001;
 
 app.listen(PORT, function() {
   console.log(`🌎 ==> Server now on port ${PORT}!`);
