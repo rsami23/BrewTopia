@@ -1,12 +1,12 @@
-// const router = require("express").Router();
-// const beersController = require("../../controllers/beersController");
+const beersController = require("../controllers/beersController");
+const express = require("express");
 
-// router.route("/")
-//   .get(beersController.findAll)
-//   .post(beersController.create);
+// module.exports = function(req, res) {
+//     app.post("/beer", beersController.create);
+// }
+
 
 //   router
 //   .route("/:id")
 //   .get(beersController.findById);
 
-//   module.exports = router;
