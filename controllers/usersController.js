@@ -33,13 +33,23 @@ exports.signup = function(req, res, next){
             return res.status(422).send({ error: "User id already in use" });
         }
         // Create and save user record if it is not duplicated
-        db.User.create({
+        // db.User.create({
+        //     userId: userId,
+        //     password: password
+        // }).then(function(dbUser){
+        //     res.json({ token: tokenForUser(db) });
+        // }).catch(function(err){
+        //     res.json(err);
+        // });  
+        const user = new db.User({
             userId: userId,
             password: password
-        }).then(function(dbUser){
-            res.json({ token: tokenForUser(db) });
-        }).catch(function(err){
-            res.json(err);
-        });  
+        });
+      
+        user.save(function(err) {
+            if (err) { return next(err); }
+            // Repond to request indicating the user was created
+            res.json({ token: tokenForUser(user) });
+        });
     });
 }

@@ -1,12 +1,30 @@
-const beersController = require("../controllers/beersController");
+const db = ("../models/");
 const express = require("express");
+const bodyParser = require("body-parser");
+const router = express.Router();
 
-// module.exports = function(req, res) {
-//     app.post("/beer", beersController.create);
-// }
+router.route("/beers").get(function(req, res) {
 
+});
 
-//   router
-//   .route("/:id")
-//   .get(beersController.findById);
+router.route("/beers").post(function(req, res) {
+    var beer = new db.Beer({
+        beerName: beerName ,
+        rating: rating,
+        beerType: beerType,
+        breweryName: breweryName,
+        summary: summary
+    });
+
+    beer.save(function(err) {
+        if (err) {
+            res.send(err);
+        } else {
+            res.send(json);
+        }
+    });       
+});
+
+module.exports = router;
+
 

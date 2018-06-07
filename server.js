@@ -6,7 +6,8 @@ const http = require("http");
 const mongoose = require("mongoose");
 const path = require("path");
 const app = express();
-// const cors = require("cors");
+const cors = require("cors");
+var router = require('./routes/beers.js');
 
 // Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -14,19 +15,18 @@ app.use(bodyParser.json());
 
 // Morgan setup
 app.use(morgan('combined'));
-// app.use(cors());
+app.use(cors());
 
 // Serve up static assets 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-// Add routes
+// Add Auth route
 require("./routes/users.js")(app);
-// require("./routes/beers.js")(app);
 
 // Set up promises with mongoose
-mongoose.Promise = global.Promise;
+// mongoose.Promise = global.Promise;
 
 // Connect to Mongo DB
 mongoose.connect(
