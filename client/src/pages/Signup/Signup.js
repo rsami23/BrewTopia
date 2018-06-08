@@ -27,7 +27,7 @@ class Signup extends Component {
                             type="text"
                             component="input"
                             className="form-control"
-                            id="userId"
+                            userid="userId"
                             autoComplete="none"
                         />
                         </fieldset>
@@ -40,7 +40,7 @@ class Signup extends Component {
                             type="password"
                             component="input"
                             className="form-control"
-                            id="password"
+                            password="password"
                         />
                         </fieldset>
                     </div>

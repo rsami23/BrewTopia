@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 const path = require("path");
 const app = express();
 const cors = require("cors");
-var router = require('./routes/beers.js');
+const router = require('./routes/beers');
 
 // Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -24,9 +24,10 @@ if (process.env.NODE_ENV === "production") {
 
 // Add Auth route
 require("./routes/users.js")(app);
+app.use("/api", router);
 
 // Set up promises with mongoose
-// mongoose.Promise = global.Promise;
+mongoose.Promise = global.Promise;
 
 // Connect to Mongo DB
 mongoose.connect(

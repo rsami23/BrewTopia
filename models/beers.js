@@ -9,6 +9,6 @@ const beerSchema = new Schema({
     summary: { type: String, required: true }
 });
 
-const Beer = mongoose.model("Beer", beerSchema);
+const Beer = mongoose.model("beer", beerSchema);
 
 module.exports = Beer;
