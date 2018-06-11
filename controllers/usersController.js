@@ -1,11 +1,13 @@
 const jwt = require("jwt-simple");
 const db = require("../models");
-const config = require("../config");
+// const config = require("../config");
 const mongoose = require("mongoose");
 
 function tokenForUser(user){
     const timestamp = new Date().getTime();
-    return jwt.encode({ sub: user.id, iat: timestamp }, config.secret);
+    return jwt.encode({ sub: user.id, iat: timestamp }, 
+        // config.secret
+    );
 }
 
 exports.signin = function(req, res, next){
