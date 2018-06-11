@@ -17,6 +17,12 @@ class Brewery extends Component {
         ).catch(err => console.log(err));
     };
 
+    beerList = () => {
+        for(i = 0; i < beers.length; i++){
+            console.log(beers[i]);
+        }
+    }
+
     render(){
         return(
             <div className="container">
@@ -24,16 +30,7 @@ class Brewery extends Component {
                     <div className="row">
                         <div className="col-sm-6">
                             <ul>
-                                {this.state.beers.map(beer => (
-                                    <BeerListItem 
-                                        key={beer._id}
-                                        _id={beer._id}
-                                        beerName={beer.beerName}
-                                        rating={beer.rating}
-                                        beerType={beer.beerType}
-                                        summary={beer.summary}
-                                    />
-                                ))}   
+                                   
                             </ul>
                         </div>
                     </div>
