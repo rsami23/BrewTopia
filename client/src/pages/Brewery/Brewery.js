@@ -3,9 +3,14 @@ import API from "../../utils/API";
 import BeerListItem from "../../components/BeerListItem";
 
 class Brewery extends Component {
-    state = {
-        beers: []
-    };
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            beers: []
+        };
+    }
+    
 
     componentDidMount(){
         this.getSavedBeers();
