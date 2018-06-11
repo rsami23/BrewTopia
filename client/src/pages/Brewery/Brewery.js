@@ -9,12 +9,12 @@ class Brewery extends Component {
         this.state = {
             beers: []
         };
-    }
+    };
     
 
     componentDidMount(){
         this.getSavedBeers();
-    }
+    };
 
     getSavedBeers = () => {
         API.getBeer().then(res =>
@@ -23,22 +23,23 @@ class Brewery extends Component {
     };
 
     render(){
+        var beerList = this.state.beers.map((beer) => (
+            <BeerListItem 
+                key={beer._id}
+                _id={beer._id}
+                beerName={beer.beerName}
+                rating={beer.rating}
+                beerType={beer.beerType}
+                summary={beer.summary}
+            />
+        ))
         return(
             <div className="container">
                 <div className="beers">
                     <div className="row">
                         <div className="col-sm-6">
                             <ul>
-                                {this.state.beers.map(beer => {
-                                    <BeerListItem 
-                                        key={beer._id}
-                                        _id={beer._id}
-                                        beerName={beer.beerName}
-                                        rating={beer.rating}
-                                        beerType={beer.beerType}
-                                        summary={beer.summary}
-                                    />
-                                })}   
+                                {beerList} 
                             </ul>
                         </div>
                     </div>
