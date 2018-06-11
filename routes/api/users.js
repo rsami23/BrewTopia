@@ -1,5 +1,5 @@
-const usersController = require("../controllers/usersController");
-const passportService = require("../login/passport");
+const usersController = require("../../controllers/usersController");
+const passportService = require("../../login/passport");
 const passport = require("passport");
 
 // Middleware

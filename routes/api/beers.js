@@ -2,7 +2,7 @@ const db = ("../models/beers");
 const express = require("express");
 const bodyParser = require("body-parser");
 const router = express.Router();
-const beersController = require("../controllers/beersController");
+const beersController = require("../../controllers/beersController");
 
 // Get a list of beers frim db
 router.route("/beers")

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from "axios";
+import API from "../../utils/API";
 import "./AddBeer.css";
 
 class AddBeer extends Component {
@@ -53,9 +53,16 @@ class AddBeer extends Component {
             breweryName: this.state.breweryName,
             summary: this.state.summary
         };
-
-        // axios.post("/beers", {beer}).then(res => console.log(res));
-    }
+        console.log(beer_data);
+        API.createBeer(beer_data).then(res=> {
+            console.log(res.data);
+        });
+        // axios.post("https://localhost:3001/api/beers", {beer_data})
+        //     .then(res => {
+        //         console.log(res);
+        //         console.log(res.data);
+        // });
+    };
 
     render() {
         return(
@@ -121,7 +128,7 @@ class AddBeer extends Component {
                                 </textarea>
                                 Value of the input: {this.state.summary}
                             </div>
-                            <button type="button" className="btn btn-secondary btn-lg btn-block">Submit</button>
+                            <button type="submit" className="btn btn-secondary btn-lg btn-block">Submit</button>
                         </form>
                     </div>
                 </div>
