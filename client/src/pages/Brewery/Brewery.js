@@ -25,7 +25,7 @@ class Brewery extends Component {
                             <div className="card">
                                 <h5 className="card-header">Featured</h5>
                                 <div className="card-body">
-                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
                                 </div>
                             </div>
                                 {/* <ul>
