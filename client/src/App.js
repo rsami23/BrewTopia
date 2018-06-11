@@ -5,16 +5,18 @@ import { createStore, applyMiddleware } from "redux";
 import reduxThunk from "redux-thunk";
 import reducers from "./reducers";
 import Home from "./pages/Home";
-import Signup from "./pages/Signup";
-import Login from "./pages/Login";
+import Signup from "./components/Signup";
+import Login from "./components/Login";
+import Signout from "./components/Signout";
 import About from "./pages/About";
 import Dashboard from "./pages/Dashboard";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 
 const store = createStore(
-  reducers,
-  {},
+  reducers, {
+    auth: { authenticated: localStorage.getItem("token") }
+  },
   applyMiddleware(reduxThunk)
 );
 
@@ -29,6 +31,7 @@ const App = () => (
         <Route exact path="/signin" component={ Login } />
         <Route exact path="/about" component={ About } />
         <Route exact path="/dashboard" component={ Dashboard } />
+        <Route exact path="/signout" component={ Signout } />
       </Switch>
       <Footer />
     </div>

@@ -7,7 +7,9 @@ import "./Signup.css";
 
 class Signup extends Component {
     onSubmit = (formProps) => {
-        this.props.signup(formProps); 
+        this.props.signup(formProps, () => {
+            this.props.history.push("/dashboard");
+        }); 
         console.log(formProps);
     };
     
@@ -52,6 +54,7 @@ class Signup extends Component {
                             <option value="2">No</option>
                         </select>
                     </div>
+                    <div> { this.props.errorMessage } </div>
                     <button className="btn btn-secondary btn-lg btn-block">Submit</button>
                 </form>
             </div>
@@ -60,7 +63,11 @@ class Signup extends Component {
     }
 }
 
+function mapStateToProps(state) {
+    return { errorMessage: state.auth.errorMessage };
+}
+
 export default compose( 
-    connect(null, actions), 
+    connect(mapStateToProps, actions), 
     reduxForm({ form: "signup" })
 )(Signup);

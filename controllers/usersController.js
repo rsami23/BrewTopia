@@ -15,13 +15,13 @@ exports.signin = function(req, res, next){
 }
 
 exports.signup = function(req, res, next){
-    console.log(`Controller`, req.body);
+    console.log(req.body);
     const userId = req.body.userId;
     const password = req.body.password;
 
-    // if(!userId || !password){
-    //     return res.status(422).send({ error: "You must provide User id and Password" });
-    // }
+    if(!userId || !password){
+        return res.status(422).send({ error: "You must provide User id and Password" });
+    }
 
     // See if a user with the given user id exists
     db.User.findOne({ userId: userId }, function(err, existingUser) {

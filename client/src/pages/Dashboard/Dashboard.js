@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import AddBeer from "../../components/AddBeer";
+import requireAuth from "../../requireAuth";
 import "./Dashboard.css";
+
 
 class Dashboard extends Component {
     handleFormSubmit = event => {
@@ -28,4 +30,4 @@ class Dashboard extends Component {
     }
 }
 
-export default Dashboard;
+export default requireAuth(Dashboard);

@@ -15,6 +15,8 @@ app.use(bodyParser.json());
 
 // Morgan setup
 app.use(morgan('combined'));
+
+// Cors setup
 app.use(cors());
 
 // Serve up static assets 
