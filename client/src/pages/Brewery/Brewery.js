@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-import BeerListItem from "../../components/BeerListItem";
+// import BeerListItem from "../../components/BeerListItem";
 
 class Brewery extends Component {
     constructor(props) {
@@ -24,7 +24,7 @@ class Brewery extends Component {
 
     render(){
         var beerList = this.state.beers.map((beer) => (
-            <BeerListItem 
+            <li
                 key={beer._id}
                 _id={beer._id}
                 beerName={beer.beerName}
