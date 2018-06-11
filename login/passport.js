@@ -1,7 +1,7 @@
 // Required dependencies
 const passport = require("passport");
 const db = require("../models");
-const config = require("../config");
+// const config = require("../config");
 const JwtStrategy = require("passport-jwt").Strategy; // Strategy is a method to authenticate a user
 const ExtractJwt = require("passport-jwt").ExtractJwt;
 const LocalStrategy = require("passport-local");

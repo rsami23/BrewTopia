@@ -1,6 +1,6 @@
 const jwt = require("jwt-simple");
 const db = require("../models");
-const config = require("../config");
+// const config = require("../config");
 const mongoose = require("mongoose");
 
 function tokenForUser(user){
