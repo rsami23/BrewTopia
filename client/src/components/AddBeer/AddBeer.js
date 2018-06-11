@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
+import Modal from "../Modal/modal";
 import "./AddBeer.css";
 
 class AddBeer extends Component {
@@ -54,14 +55,10 @@ class AddBeer extends Component {
             summary: this.state.summary
         };
         console.log(beer_data);
+        // Send beer data to the Db
         API.createBeer(beer_data).then(res=> {
             console.log(res.data);
         });
-        // axios.post("https://localhost:3001/api/beers", {beer_data})
-        //     .then(res => {
-        //         console.log(res);
-        //         console.log(res.data);
-        // });
     };
 
     render() {
@@ -80,7 +77,6 @@ class AddBeer extends Component {
                                     onChange={this.handlebeerNameChange}  
                                     value = {this.state.beerName}
                                 />
-                                Value of the input: {this.state.beerName}
                             </div>
                             <div className="form-group">
                                 <label htmlFor="rating">Rating of Beer from 1-5</label>
@@ -92,7 +88,6 @@ class AddBeer extends Component {
                                     <option value="4">4</option>
                                     <option value="5">5 (So Good!!)</option>
                                 </select>
-                                Value of the input: {this.state.rating}
                             </div>
                             <div className="form-group">
                                 <label htmlFor="beerType">Type of Beer: (ie. IPA, Stout, Ale...)</label>
@@ -103,7 +98,6 @@ class AddBeer extends Component {
                                     onChange={this.handlebeerTypeChange} 
                                     value = {this.state.beerType}
                                 />
-                                Value of the input: {this.state.beerType}
                             </div>
                             <div className="form-group">
                                 <label htmlFor="breweryName">Name of Brewery:</label>
@@ -114,7 +108,6 @@ class AddBeer extends Component {
                                     onChange={this.handlebreweryNameChange} 
                                     value = {this.state.breweryName}
                                 />
-                                Value of the input: {this.state.breweryName}
                             </div>
                             <div className="form-group">
                                 <label htmlFor="summary">Your summary of the Beer:</label>
@@ -126,9 +119,9 @@ class AddBeer extends Component {
                                     onChange={this.handlesummaryChange}
                                     value={this.state.summary}>
                                 </textarea>
-                                Value of the input: {this.state.summary}
                             </div>
-                            <button type="submit" className="btn btn-secondary btn-lg btn-block">Submit</button>
+                            <Modal />
+                            <button type="submit" className="btn btn-secondary btn-lg btn-block" onClick={this.showModal}>Submit</button>
                         </form>
                     </div>
                 </div>

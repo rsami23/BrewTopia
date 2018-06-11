@@ -10,6 +10,7 @@ import Login from "./components/Login";
 import Signout from "./components/Signout";
 import About from "./pages/About";
 import Dashboard from "./pages/Dashboard";
+import Brewery from "./pages/Brewery";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 
@@ -31,6 +32,7 @@ const App = () => (
         <Route exact path="/signin" component={ Login } />
         <Route exact path="/about" component={ About } />
         <Route exact path="/dashboard" component={ Dashboard } />
+        <Route exact path="/brewery" component={ Brewery } />
         <Route exact path="/signout" component={ Signout } />
       </Switch>
       <Footer />

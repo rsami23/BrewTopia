@@ -5,11 +5,7 @@ import "./Dashboard.css";
 
 
 class Dashboard extends Component {
-    handleFormSubmit = event => {
-        event.preventDefault();
-        
-    }
-
+    
 
     render() {
         return(

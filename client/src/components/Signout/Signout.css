@@ -1,0 +1,16 @@
+.signout {
+    border: 1px solid #777777;
+    border-radius: 10px;
+    padding: 50px;
+    margin-top: 100px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#signoutImg {
+    height: 500px;
+}
