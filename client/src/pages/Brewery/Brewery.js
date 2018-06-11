@@ -18,8 +18,8 @@ class Brewery extends Component {
     };
 
     beerList = () => {
-        for(var i = 0; i < beers.length; i++){
-            console.log(beers[i]);
+        for(var i = 0; i < state.beers.length; i++){
+            console.log(state.beers[i]);
         }
     }
 
