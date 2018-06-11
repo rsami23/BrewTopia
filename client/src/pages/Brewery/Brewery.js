@@ -17,8 +17,6 @@ class Brewery extends Component {
         ).catch(err => console.log(err));
     };
 
-   
-
     render(){
         return(
             <div className="container">
@@ -26,7 +24,7 @@ class Brewery extends Component {
                     <div className="row">
                         <div className="col-sm-6">
                             <ul>
-                                {this.state.beers.map(beers => (
+                                {this.state.beers.map(beer => (
                                     <BeerListItem 
                                         key={beer._id}
                                         _id={beer._id}
