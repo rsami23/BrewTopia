@@ -22,23 +22,17 @@ class Brewery extends Component {
                 <div className="beers">
                     <div className="row">
                         <div className="col-sm-6">
-                            <div className="card">
-                                <h5 className="card-header">Featured</h5>
-                                <div className="card-body">
-                                    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                </div>
-                            </div>
-                                {/* <ul>
-                                    {this.state.beers.map(beer => (
-                                        <li>
-                                            {beer.beerName}
-                                            {beer.rating}
-                                            {beer.beerType}
-                                            {beer.breweryName}
-                                            {beer.summary}
-                                        </li>
-                                    ))}
-                                </ul> */}
+                            <ul>
+                                {this.state.beers.map(beer => (
+                                <li>
+                                    {beer.beerName}
+                                    {beer.rating}
+                                    {beer.beerType}
+                                    {beer.breweryName}
+                                    {beer.summary}
+                                </li>
+                                ))}
+                            </ul>
                         </div>
                     </div>
                 </div>
