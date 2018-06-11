@@ -24,7 +24,7 @@ class Brewery extends Component {
                     <div className="row">
                         <div className="col-sm-6">
                             <ul>
-                                {this.state.beers.pipe(map(beer => (
+                                {this.state.beers.map(beer => {
                                     <BeerListItem 
                                         key={beer._id}
                                         _id={beer._id}
@@ -33,7 +33,7 @@ class Brewery extends Component {
                                         beerType={beer.beerType}
                                         summary={beer.summary}
                                     />
-                                )))}   
+                                })}   
                             </ul>
                         </div>
                     </div>
