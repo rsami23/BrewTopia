@@ -10,17 +10,18 @@ class Dashboard extends Component {
     render() {
         return(
             <div className="container">
-                {/* Top Rated Beers */}
-                <div id="topRated">
-                    <h1 className="display-4 topRatedTitle">Top Rated Brews</h1>
-                    <div className="topRatedBrews">
+                <div className="row">
+                    <div className="col-sm-6" id="topRated">
+                        <h1 className="display-4 topRatedTitle">Top Rated Brews</h1>
+                        <div className="topRatedBrews">
+                        </div>
+                    </div>
+                    <div className="col-sm-6">
+                        <AddBeer
+                        handleFormSubmit={this.handleFormSubmit}
+                        />
                     </div>
                 </div>
-                {/* Add Beer Form */}
-                <AddBeer
-                    handleFormSubmit={this.handleFormSubmit}
-                />
-                
             </div>
         );
     }
