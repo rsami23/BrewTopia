@@ -9,7 +9,7 @@ import wheatImage from "../../images/wheat.png";
 class Signin extends Component {
     onSubmit = (formProps) => {
         this.props.signin(formProps, () => {
-            this.props.history.push("/dashboard");
+            this.props.history.push("https://brewtopiareact.herokuapp.com/dashboard");
         }); 
         console.log(formProps);
     };
