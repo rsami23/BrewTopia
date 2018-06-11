@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
+import BeerListItem from "../../components/BeerListItem";
 
 class Brewery extends Component {
     state = {
@@ -16,6 +17,12 @@ class Brewery extends Component {
         ).catch(err => console.log(err));
     };
 
+    beerList = (props) => {
+        const beerItems = props.beers.map((beer => {
+            return <BeerListItem beer={beer} />
+        }));
+    }
+
     render(){
         return(
             <div className="container">
@@ -23,15 +30,7 @@ class Brewery extends Component {
                     <div className="row">
                         <div className="col-sm-6">
                             <ul>
-                                {this.state.beers.map(beer => (
-                                <li>
-                                    {beer.beerName}
-                                    {beer.rating}
-                                    {beer.beerType}
-                                    {beer.breweryName}
-                                    {beer.summary}
-                                </li>
-                                ))}
+                                {beerItems}
                             </ul>
                         </div>
                     </div>
