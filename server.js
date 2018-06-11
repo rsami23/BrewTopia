@@ -7,7 +7,8 @@ const mongoose = require("mongoose");
 const path = require("path");
 const app = express();
 const cors = require("cors");
-const router = require('./routes/api/beers');
+const routes = require("./routes");
+// const router = require('./routes/api/beers');
 const PORT = process.env.PORT || 3001;
 
 // Configure body parser for AJAX requests
@@ -26,8 +27,8 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Add Auth route
-require("./routes/api/users.js")(app);
-app.use("/api", router);
+// require("./routes/api/users.js")(app);
+app.use(routes);
 
 // Send every request to the React app
 // Define any API routes before this runs

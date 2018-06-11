@@ -28,7 +28,7 @@ class Brewery extends Component {
                                     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                                 </div>
                             </div>
-                                <ul>
+                                {/* <ul>
                                     {this.state.beers.map(beer => (
                                         <li>
                                             {beer.beerName}
@@ -38,7 +38,7 @@ class Brewery extends Component {
                                             {beer.summary}
                                         </li>
                                     ))}
-                                </ul>
+                                </ul> */}
                         </div>
                     </div>
                 </div>
