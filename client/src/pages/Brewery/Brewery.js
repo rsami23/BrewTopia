@@ -17,11 +17,7 @@ class Brewery extends Component {
         ).catch(err => console.log(err));
     };
 
-    beerList = (props) => {
-        const beerItems = props.beers.map((beer => {
-            return <BeerListItem beer={beer} />
-        }));
-    }
+   
 
     render(){
         return(
@@ -30,7 +26,16 @@ class Brewery extends Component {
                     <div className="row">
                         <div className="col-sm-6">
                             <ul>
-                                {beerItems}
+                                {this.state.beers.map(beers => (
+                                    <BeerListItem 
+                                        key={beer._id}
+                                        _id={beer._id}
+                                        beerName={beer.beerName}
+                                        rating={beer.rating}
+                                        beerType={beer.beerType}
+                                        summary={beer.summary}
+                                    />
+                                ))}   
                             </ul>
                         </div>
                     </div>

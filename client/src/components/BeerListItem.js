@@ -1,7 +1,10 @@
 import React from "react";
 
 const BeerListItem = (props) => {
-    return <li>Beer</li>
+    return 
+        <li className="list-group-item">
+            {props.children}
+        </li>
 };
 
 export default BeerListItem;
