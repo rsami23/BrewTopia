@@ -8,7 +8,7 @@ import "./Signup.css";
 class Signup extends Component {
     onSubmit = (formProps) => {
         this.props.signup(formProps, () => {
-            this.props.history.push("https://brewtopiareact.herokuapp.com/dashboard");
+            this.props.history.push("/dashboard");
         }); 
         console.log(formProps);
     };
