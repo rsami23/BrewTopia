@@ -65,3 +65,6 @@ config.js
 
 # DS_Store
 .DS_Store
+
+# ENV file
+.env
