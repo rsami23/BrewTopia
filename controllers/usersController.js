@@ -2,10 +2,11 @@ const jwt = require("jwt-simple");
 const db = require("../models");
 // const config = require("../config");
 const mongoose = require("mongoose");
+const secret = (process.env.REACT_APP_SECRET);
 
 function tokenForUser(user){
     const timestamp = new Date().getTime();
-    return jwt.encode({ sub: user.id, iat: timestamp }, SuperAgent.get(process.env.REACT_APP_SECRET));
+    return jwt.encode({ sub: user.id, iat: timestamp }, secret);
 }
 
 exports.signin = function(req, res, next){
