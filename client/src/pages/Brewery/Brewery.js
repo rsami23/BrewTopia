@@ -17,12 +17,6 @@ class Brewery extends Component {
         ).catch(err => console.log(err));
     };
 
-    beerList = () => {
-        for(var i = 0; i < state.beers.length; i++){
-            console.log(state.beers[i]);
-        }
-    }
-
     render(){
         return(
             <div className="container">
