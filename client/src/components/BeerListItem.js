@@ -3,7 +3,7 @@ import React from "react";
 const BeerListItem = (props) => {
     return 
         <li className="list-group-item">
-            {props.children}
+            {this.props.beers}
         </li>
 };
 
