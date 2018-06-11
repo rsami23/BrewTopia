@@ -35,7 +35,7 @@ const localLogin = new LocalStrategy(localOptions, function(userId, password, do
 // Setup option for Jwt(json web tokens) Strategy
 const jwtOptions = {
     jwtFromRequest: ExtractJwt.fromHeader("authorization"),
-    secretOrKey: config.secret
+    secretOrKey: SuperAgent.get(process.env.REACT_APP_SECRET)
 };
 
 // Create Jwt Strategy 
