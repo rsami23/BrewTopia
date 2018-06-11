@@ -29,6 +29,12 @@ if (process.env.NODE_ENV === "production") {
 require("./routes/api/users.js")(app);
 app.use("/api", router);
 
+// Send every request to the React app
+// Define any API routes before this runs
+app.get("*", function(req, res) {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
+
 // Set up promises with mongoose
 mongoose.Promise = global.Promise;
 
@@ -36,12 +42,6 @@ mongoose.Promise = global.Promise;
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/brewtopia",
 );
-
-// Send every request to the React app
-// Define any API routes before this runs
-app.get("*", function(req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
 
 app.listen(PORT, function() {
   console.log(`🌎 ==> Server now on portx ${PORT}!`);
