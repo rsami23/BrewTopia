@@ -23,22 +23,14 @@ class Brewery extends Component {
     };
 
     render(){
-        // var beerList = this.state.beers.map((beer) => (
-        //     <li
-        //         key={beer._id}
-        //         _id={beer._id}
-        //         beerName={beer.beerName}
-        //         rating={beer.rating}
-        //         beerType={beer.beerType}
-        //         summary={beer.summary}
-        //     />
-        // ));
-
-        var beerList = () => {
-            for(i = 0; i < beers.length; i++){
-                console.log(beers[i]);
-            };
-        };
+        var beerList = this.beers.map((beer) => (
+            <li key={beer._id}>
+                {beer.beerName}
+                {beer.rating}
+                {beer.beerType}
+                {beer.summary}
+            </li>
+        ));
 
         return(
             <div className="container">
