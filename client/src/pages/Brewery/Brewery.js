@@ -23,14 +23,16 @@ class Brewery extends Component {
     };
 
     render(){
-        var beerList = this.beers.map((beer) => (
-            <li key={beer._id}>
-                {beer.beerName}
-                {beer.rating}
-                {beer.beerType}
-                {beer.summary}
-            </li>
-        ));
+        if (this.props.beer){
+            var beerList = this.props.beers.map((beer) => (
+                <li key={beer._id}>
+                    {beer.beerName}
+                    {beer.rating}
+                    {beer.beerType}
+                    {beer.summary}
+                </li>
+            ));
+        }
 
         return(
             <div className="container">
