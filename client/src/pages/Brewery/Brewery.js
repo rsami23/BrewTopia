@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-import Data from "../../components/Data";
+// import Data from "../../components/Data";
 // import BeerListItem from "../../components/BeerListItem";
 
 class Brewery extends Component {
@@ -12,36 +12,38 @@ class Brewery extends Component {
         };
     };
     
-
     componentDidMount(){
         this.getSavedBeers();
     };
 
-    getSavedBeers = () => {
-        API.getBeer().then(res =>
-            this.setState({beers: res.data})
-        ).catch(err => console.log(err));
-        console.log("beer should show up");
+    getSavedBeers = (id) => {
+        API.getBeer().then(res => {
+            console.log(res.data);
+            this.setState({beer: res.data})
+            console.log(this.state.beer);
+        })   
     };
 
     render(){
-        if (this.props.beer){
-            var beerList = this.props.beers.map((beer) => (
-                <li key={beer._id}>
-                    {beer.beerName}
-                    {beer.rating}
-                    {beer.beerType}
-                    {beer.breweryName}
-                    {beer.summary}
-                </li>
-            ));
-        }
+        // if (this.props.beer){
+        //     var beerList = this.props.beers.map((beer) => (
+        //         <li key={beer._id}>
+        //             {beer.beerName}
+        //             {beer.rating}
+        //             {beer.beerType}
+        //             {beer.breweryName}
+        //             {beer.summary}
+        //         </li>
+        //     ));
+        // }
 
         return(
             <div className="container">
                 <div className="beers">
                     <div className="breweryData">
-                        <Data />
+                        <ul>
+                            
+                        </ul>
                     </div>
                 </div>
             </div>

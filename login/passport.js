@@ -1,12 +1,11 @@
 // Required dependencies
 const passport = require("passport");
 const db = require("../models");
-// const config = require("../config");
-const secret = (process.env.REACT_APP_SECRET);
+const config = require("../config");
+// const secret = (process.env.REACT_APP_SECRET);
 const JwtStrategy = require("passport-jwt").Strategy; // Strategy is a method to authenticate a user
 const ExtractJwt = require("passport-jwt").ExtractJwt;
 const LocalStrategy = require("passport-local");
-
 
 // Create local strategy for returning user log in 
 const localOptions = { usernameField: "userId" };
@@ -36,7 +35,7 @@ const localLogin = new LocalStrategy(localOptions, function(userId, password, do
 // Setup option for Jwt(json web tokens) Strategy
 const jwtOptions = {
     jwtFromRequest: ExtractJwt.fromHeader("authorization"),
-    secretOrKey: secret
+    secretOrKey: config.secret
 };
 
 // Create Jwt Strategy 

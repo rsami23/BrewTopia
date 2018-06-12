@@ -54,10 +54,14 @@ class AddBeer extends Component {
             summary: this.state.summary
         };
         console.log(beer_data);
-        // Send beer data to the Db
         API.createBeer(beer_data).then(res=> {
             console.log(res.data);
         });
+        // axios.post("https://localhost:3001/api/beers", {beer_data})
+        //     .then(res => {
+        //         console.log(res);
+        //         console.log(res.data);
+        // });
     };
 
     render() {

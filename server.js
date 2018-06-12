@@ -7,11 +7,7 @@ const mongoose = require("mongoose");
 const path = require("path");
 const app = express();
 const cors = require("cors");
-const routes = require("./routes");
-// const router = require('./routes/api/beers');
-const PORT = process.env.PORT || 3001;
-
-require("dotenv").config();
+const router = require('./routes/api/beers');
 
 // Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -29,14 +25,8 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Add Auth route
-// require("./routes/api/users.js")(app);
-app.use(routes);
-
-// Send every request to the React app
-// Define any API routes before this runs
-// app.get("*", function(req, res) {
-//   res.sendFile(path.join(__dirname, "./client/build/index.html"));
-// });
+require("./routes/api/users.js")(app);
+app.use("/api", router);
 
 // Set up promises with mongoose
 mongoose.Promise = global.Promise;
@@ -46,6 +36,14 @@ mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/brewtopia",
 );
 
+// Send every request to the React app
+// Define any API routes before this runs
+// app.get("*", function(req, res) {
+  // res.sendFile(path.join(__dirname, "./client/build/index.html"));
+// });
+
+const PORT = process.env.PORT || 3001;
+
 app.listen(PORT, function() {
-  console.log(`🌎 ==> Server now on portx ${PORT}!`);
+  console.log(`🌎 ==> Server now on port ${PORT}!`);
 });
