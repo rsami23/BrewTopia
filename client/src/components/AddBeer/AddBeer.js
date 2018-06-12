@@ -120,8 +120,7 @@ class AddBeer extends Component {
                                     value={this.state.summary}>
                                 </textarea>
                             </div>
-                            <Modal />
-                            <button type="submit" className="btn btn-secondary btn-lg btn-block" onClick={this.showModal}>Submit</button>
+                            <button type="submit" className="btn btn-secondary btn-lg btn-block">Submit</button>
                         </form>
                     </div>
                 </div>

@@ -20,6 +20,7 @@ class Brewery extends Component {
         API.getBeer().then(res =>
             this.setState({beers: res.data})
         ).catch(err => console.log(err));
+        console.log("beer should show up");
     };
 
     render(){
