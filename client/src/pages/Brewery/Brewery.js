@@ -30,6 +30,7 @@ class Brewery extends Component {
                     {beer.beerName}
                     {beer.rating}
                     {beer.beerType}
+                    {beer.breweryName}
                     {beer.summary}
                 </li>
             ));

@@ -8,9 +8,13 @@
 
 h1 {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 10px;
 }
 
 #signoutImg {
     height: 500px;
+}
+
+.line-two {
+    margin-top: 10px;
 }

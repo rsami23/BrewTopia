@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-import Modal from "../Modal/modal";
 import "./AddBeer.css";
 
 class AddBeer extends Component {

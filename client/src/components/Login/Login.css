@@ -13,5 +13,5 @@
 .wheat-image {
     width: 100%;
     bottom: 0px;
-    position: relative;
+    position: fixed;
 }
