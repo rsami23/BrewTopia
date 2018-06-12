@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
+import Data from "../../components/Data";
 // import BeerListItem from "../../components/BeerListItem";
 
 class Brewery extends Component {
@@ -39,12 +40,8 @@ class Brewery extends Component {
         return(
             <div className="container">
                 <div className="beers">
-                    <div className="row">
-                        <div className="col-sm-6">
-                            <ul>
-                                {beerList} 
-                            </ul>
-                        </div>
+                    <div className="breweryData">
+                        <Data />
                     </div>
                 </div>
             </div>
