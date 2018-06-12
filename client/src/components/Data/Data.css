@@ -1,0 +1,10 @@
+.data {
+    border: 1px solid #E8A735;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.beerItems {
+    line-height: normal;
+}

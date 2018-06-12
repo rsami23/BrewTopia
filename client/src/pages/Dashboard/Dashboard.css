@@ -1,10 +1,10 @@
-
-
 #topRated {
     border: 1px solid #777777;
     border-radius: 10px;
     padding: 50px;
     margin-top: 30px;
+    overflow: scroll;
+    height: 700px;
 }
 
 .topRatedTitle {
