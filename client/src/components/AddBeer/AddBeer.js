@@ -19,7 +19,6 @@ class AddBeer extends Component {
         this.handlebreweryNameChange = this.handlebreweryNameChange;
         this.handlesummaryChange = this.handlesummaryChange;
     }
-    
 
     handlebeerNameChange = event => {
         this.setState({ beerName: event.target.value });
@@ -57,12 +56,9 @@ class AddBeer extends Component {
         API.createBeer(beer_data).then(res=> {
             console.log(res.data);
         });
-        // axios.post("https://localhost:3001/api/beers", {beer_data})
-        //     .then(res => {
-        //         console.log(res);
-        //         console.log(res.data);
-        // });
-    };
+
+        alert("Beer has been successfully saved!!")
+    }; 
 
     render() {
         return(

@@ -7,5 +7,9 @@ export default {
     
     getBeer: function() {
         return axios.get("/api/beers");
-    }
+    },
+
+    saveBeer: function (id) {
+        return axios.get("/api/beers/savebeer/"+id)
+    },
 }
